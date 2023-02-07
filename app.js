@@ -34,17 +34,10 @@ app.post("/", function(req, res){
 
     const jsonData = JSON.stringify(data);
 
-<<<<<<< HEAD
-    const url = "https://us9.api.mailchimp.com/3.0/lists/${list-id}"
-    const options = {
-        method: "POST",
-        auth: "${apiKey}"
-=======
     const url = "https://us9.api.mailchimp.com/3.0/lists/" + process.env.MC_listID;
     const options = {
         method: "POST",
         auth: "chaninlaw:" + process.env.MC_API_Key
->>>>>>> fa9a1c5 (configure dotenv)
     }
     const request = https.request(url, options, function(response){
 
@@ -72,8 +65,4 @@ app.post("/failure", function(req, res){
 
 app.listen(process.env.PORT || 3000, function(){
     console.log("Server running on port:3000.");
-<<<<<<< HEAD
 })
-=======
-})
->>>>>>> fa9a1c5 (configure dotenv)
